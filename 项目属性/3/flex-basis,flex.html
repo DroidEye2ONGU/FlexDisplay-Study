@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>flex-basis&flex</title>
+    <!--
+        flex-basis
+            可以修改子容器占据的主轴空间的大小。默认值为auto，即子容器的本来大小（子容器自身的宽度）
+            flex-basis:<length> | auto
+            flex-basis如果与width同是设置，则flex-basis的优先级更大
+
+        flex
+            flex属性是flex-grow,flex-shrink和flex-basis的简写，默认值是1 1 auto，后面两个值可选
+            flex: none || [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'>]
+            该属性设置auto等同于（1 1 auto）,none等同于（0 0 auto）
+            建议优先使⽤用这个属性，⽽而不不是单独写三个分离的属性，因为浏览器器会推算相关值。
+     -->
+    <style>
+        .flexText {
+            display: flex;
+        }
+
+        .item {
+            /*width: 100px;*/
+            height: 100px;
+            margin: 10px;
+            background: #C3C3C3;
+            flex: 0 1 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="flexText">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+
+    <div class="item item4">4</div>
+    <div class="item item5">5</div>
+    <div class="item item6">6</div>
+</div>
+</body>
+</html>

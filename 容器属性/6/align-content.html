@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .flexText {
+            display: flex;
+            width: 360px;
+            height: 500px;
+            flex-wrap: wrap;
+            /* align-content多行情况下的对齐方式，类似justify-content的对齐方式 */
+            /*
+                stretch （默认值） (子容器)未设置高度将占满整个空间，如设置的高度不够则每行下方填充空白填满容器
+                flex-start 与交叉轴的起点对齐
+                flex-end 与交叉抽的终点对齐
+                center 与交叉轴的中点对齐
+                space-between 与交叉轴的两端对齐，每行之间间隔一样
+                space-around 每行上下的间隔一样
+            */
+            align-content: space-around;
+
+
+        /*
+            justify-content与align-content的区别
+                1.两者都是设置对齐方式，设置的值也相等
+                2.当只设置单行情况的对齐方式时，用justify-content即可
+                3.如果要设置多行情况下的对齐方式，则需要使用align-content
+        */
+
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            background: #C3C3C3;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="flexText">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>order,flex-grow</title>
+
+    <!--
+        order
+            规定子容器（项目）的排列顺序。数值越小越靠前，默认值为0，支持负数
+            order:<integer>
+        flex-grow
+            规定子容器的放大比例，默认为1，剩余空间不足则不会放大
+            设置为0时代表子容器中内容刚好占满容器的宽度
+            flex-grow:<number>
+    -->
+    <style>
+        .flexText {
+            display: flex;
+        }
+
+        .item {
+            /*width: 100px;*/
+            /*height: 100px;*/
+            margin: 10px;
+            background: #C3C3C3;
+
+            /* 设置子元素的放大比例，设置为1时，所有子元素等分 */
+            flex-grow: 0;
+        }
+
+        .item1 {
+            /* 为子元素设置排列顺序 order数值越小越靠前,支持负数 */
+            /*order: 3;*/
+            /* 注意如果为元素设置了宽度后导致生育空间不足，这个属性会失效，可以使用min-width代替width */
+            /*flex-grow: ;*/
+
+        }
+
+        .item2 {
+            /*order: 2;*/
+        }
+
+        .item3 {
+            /*order: 1;*/
+        }
+    </style>
+</head>
+<body>
+<div class="flexText">
+    <div class="item item1">1sdasdasda</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+</div>
+</body>
+</html>

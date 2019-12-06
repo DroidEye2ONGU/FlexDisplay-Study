@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>flext-wrap||flex-flow||align-conent</title>
+    <style>
+        .flexText {
+            display: flex;
+            width: 360px;
+            height: 360px;
+            /* 设置弹性布局的换行方式 flex-wrap
+                nowrap (默认)不换行 当不换行时，子元素的宽度可能会失效
+                wrap 换行，从上往下排列，第一行在上方
+                wrap-reverse 换行，从下往上排列，第一行在下方
+             */
+            /*flex-wrap: wrap-reverse;*/
+
+            /* flex-flow是flex-direction属性和flex-wrap属性的简写方式
+               默认是row nowrap (即flex-flow: <flex-direction> || <flex-wrap>)
+             */
+            flex-flow: column wrap;
+
+            /* 指定多行情况下的排列方式 */
+            align-content: flex-start;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background: #c3c3c3;
+        }
+    </style>
+</head>
+<body>
+<div class="flexText">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+</div>
+</body>
+</html>

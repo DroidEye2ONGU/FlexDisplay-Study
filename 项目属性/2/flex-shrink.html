@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>flex-shrink</title>
+    <!--
+        flex-shrink
+            规定了子容器的缩小比例，默认为1，如果空间不足，该子容器将缩小
+            设置为0，代表容器不会缩小
+            设置的值越大，则容器缩小比例相比其他容器更大
+    -->
+
+    <style>
+
+        .flexText {
+            display: flex;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background: #C3C3C3;
+        }
+
+        .item2 {
+            /* 设置为0，代表子容器不去缩小 */
+            flex-shrink: 0;
+        }
+
+        .item2,.item3 {
+            flex-shrink: 2;
+        }
+
+    </style>
+</head>
+<body>
+<div class="flexText">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+
+    <div class="item item4">4</div>
+    <div class="item item5">5</div>
+    <div class="item item6">6</div>
+</div>
+</body>
+</html>

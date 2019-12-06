@@ -1,0 +1,91 @@
+弹性布局概念
+    1.主轴
+        类似于x轴，从左上方开始，从左到右
+    2.交叉轴
+        类似于y轴，从左上方开始，从上到下
+
+父容器属性
+    1. display:flex
+        设置为弹性布局
+
+    2. flex-direction
+        设置主轴的方向 
+        值:
+            row 默认，水平从左到右
+            row-reverse 水平从右到左
+            column 垂直从上到下
+            column-reverse 垂直从下到上
+
+    3. flex-wrap
+        设置弹性布局的换行方式
+        值:
+            nowrap 默认，不换行。当不换行时，子元素的宽度可能会失效（即会自动调整子元素的宽度以适应父元素）
+            wrap 换行，每行从上往下排列，第一行在左上方
+            wrap-reverse 换行，每行从下往上排列，第一行在下方
+
+    4. flex-flow
+        即flex-direction和flex-wrap的简写方式
+        格式:
+            flex-flow:<flex-direction> <flex-wrap>
+
+    5. align-items
+        规定子项目在交叉轴上的对齐方式(每列同行元素的对齐方式)
+        当父元素未设置固定高度时，flex-start、flex-end、center的效果可能会相同
+        值:
+            stretch 默认，如果项目未设置固定高度，将占满整个父元素的高度
+            flex-start 交叉轴的起点对齐
+            flex-end 交叉轴的终点对齐
+            center 交叉轴的中点对齐
+            baseline 以子项目的第一行文字作为基线对齐(其他子项目的第一行文字)
+
+    6. justify-content
+        设置子项目在主轴上的排列方式 （通常用于设置单行的排列方式）
+        值:
+            flex-start 默认值，（子元素）左对齐
+            flex-end （子元素）右对齐
+            center （子元素）居中对齐
+            space-between （子元素）两端对齐，子项目之间的间隔一样
+            space-around （子元素）两侧的间隔相同
+
+    7.align-content
+        设置子项目在交叉轴上的排列方式（通常用于设置多行的排列方式）
+        值:
+            stretch 默认值，如果子元素未设置固定宽度，将占满整个元素的高度
+            flex-start （子元素）与交叉轴的起点对齐
+            flex-end （子元素）与交叉轴的终点对齐
+            center （子元素）与交叉轴的中点对齐
+            space-between （子元素）与交叉轴的两端对齐，每行之间间隔相同
+            space-around 每行上下的间隔相同
+
+子容器（项目）属性
+    1.order
+        规定子容器(项目)的排列顺序。数值越小越靠前，默认值为0，支持负数
+        order:<integer>
+
+    2.flex-grow
+        规定子容器的放大比例，默认值为1，剩余空间不足则不会放大。
+        设置为0时代表子容器中内容刚好占满容器的宽度。
+        flex-grow:<number>
+
+    3.flex-shrink
+        规定子容器的缩小比例，默认值为1。如果空间不足，该子容器将缩小
+        设置为0，代表容器不会缩小
+        设置的值越大，则容器缩小比例比其他容器更大
+        flex-shrink:<number>
+    
+    4.flex-basis
+        可以修改子容器占据的主轴空间的大小。默认值为auto，即子容器的本身宽度（子容器自身的宽度）
+        flex-basis:<length> | auto
+        flex-basis如果与width同时设置，则flex-basis的优先级更大
+
+    5.flex
+        flex属性是flex-grow,flex-shrink和flex-basis的简写，默认值是1 1 auto，后面两个值可选
+        flex: none || [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'>]
+        该属性设置auto等同于（1 1 auto）,none等同于（0 0 auto）
+        建议优先使⽤用这个属性，⽽而不不是单独写三个分离的属性，因为浏览器器会推算相关值。
+    
+    6.align-self
+        align-self属性允许单个子容器与其他子容器有不一样的对齐方式（相对于交叉轴），可覆盖align-items属性。
+        默认值为auto，表示继承父元素的align-items属性。
+        当父元素未设置固定高度时，flex-start、flex-end、center的效果可能会相同
+        align-self: auto | flext-start | flex-end | center | baseline | stretch

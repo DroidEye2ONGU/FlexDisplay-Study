@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>align-self</title>
+    <!--
+        align-self
+            align-self属性允许单个子容器与其他子容器有不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性
+            当父元素未设置固定高度时，flex-start、flex-end、center的效果可能会相同
+            align-self: auto | flext-start | flex-end | center | baseline | stretch
+     -->
+
+    <style>
+        .flexText {
+            display: flex;
+            height: 500px;
+            align-items: flex-end;
+        }
+
+
+        .item {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background: #C3C3C3;
+        }
+
+        .item1,.item3 {
+            align-self: flex-start;
+        }
+    </style>
+</head>
+<body>
+<div class="flexText">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+</div>
+</body>
+</html>

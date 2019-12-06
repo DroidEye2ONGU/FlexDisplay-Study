@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>align-items</title>
+    <style>
+        .flexText {
+            display: flex;
+            /*height: 1024px;*/
+
+
+            /* 规定子项目在交叉轴（上下轴）上的对齐方式 */
+            /*
+               stretch （默认值） 如果项目未设置固定高度，将占满整个元素的高度
+               flex-start 交叉轴的起点对齐
+               flex-end 交叉轴的终点对齐
+               center 交叉轴的中点对齐
+               baseline 以子项目的第一行文字为基线对齐
+            */
+            align-items: center;
+
+            flex-wrap: wrap;
+            align-content: space-between;
+            justify-content: space-between;
+        }
+
+        .item {
+            text-align: center;
+            width: 100px;
+            background: #C3C3C3;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="flexText">
+    <div class="item" style="padding: 20px">1</div>
+    <div class="item" style="padding: 50px">2</div>
+    <div class="item" style="padding: 30px">3</div>
+    <div class="item" style="padding: 70px">4</div>
+    <div class="item" style="padding: 20px">1</div>
+    <div class="item" style="padding: 20px">1</div>
+    <div class="item" style="padding: 20px">1</div>
+    <div class="item" style="padding: 50px">2</div>
+    <div class="item" style="padding: 50px">2</div>
+    <div class="item" style="padding: 30px">3</div>
+    <div class="item" style="padding: 70px">4</div>
+    <div class="item" style="padding: 70px">4</div>
+    <div class="item" style="padding: 70px">4</div>
+</div>
+</body>
+</html>
